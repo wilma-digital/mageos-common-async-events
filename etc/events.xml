@@ -5,7 +5,7 @@
         <observer name="mageos_common_async_events_customer_save_after"
                   instance="MageOS\CommonAsyncEvents\Observer\CustomerSaveAfterObserver"/>
     </event>
-    <event name="customer_save_commit_before">
+    <event name="customer_save_before">
         <observer name="mageos_common_async_events_customer_save_before"
                   instance="MageOS\CommonAsyncEvents\Observer\CustomerSaveBeforeObserver"/>
     </event>
