@@ -23,7 +23,7 @@ class CmsBlockSaveAfterObserver implements ObserverInterface
         $block = $observer->getEvent()->getData('entity');
         $blockId = $block->getId();
 
-        // Neue Blocks können nicht gleichzeitig "updated" sein
+        // New blocks should not have the status "updated" at the same time.
         if ($this->isBlockNew($block)) {
             $this->publisherService->publish('cms.block.created', ['blockId' => $blockId]);
             return;

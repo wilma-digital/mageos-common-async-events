@@ -23,7 +23,7 @@ class CmsPageSaveAfterObserver implements ObserverInterface
         $page = $observer->getEvent()->getData('entity');
         $pageId = $page->getId();
 
-        // Neue Seiten können nicht gleichzeitig "updated" sein
+        // New pages should not have the status "updated" at the same time.
         if ($this->isPageNew($page)) {
             $this->publisherService->publish('cms.page.created', ['pageId' => $pageId]);
             return;
