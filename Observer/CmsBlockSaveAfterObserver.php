@@ -12,8 +12,7 @@ class CmsBlockSaveAfterObserver implements ObserverInterface
 {
     public function __construct(
         private readonly PublishingService $publisherService
-    ) {
-    }
+    ) {}
 
     /**
      * @see @event magento_cms_api_data_blockinterface_save_after
